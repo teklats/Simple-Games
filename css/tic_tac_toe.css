@@ -7,7 +7,6 @@ body {
     background-color: #263242;
 }
 
-
 .container{
     display: flex;
     flex-direction: column;
@@ -18,7 +17,6 @@ body {
     border-radius: 30px;
     background-color: rgb(238, 247, 249);
 }
-
 
 .board{
     display: grid;
