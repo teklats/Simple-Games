@@ -9,22 +9,32 @@
 <body>
     <div class="container">
         <div class="score">
-            <h1>Scores</h1>
-            <h2>You VS Computer</h2>
+            <h1>YOU vs AI</h1>
+            <h2 class="result" id="result">
+                
+
+            </h2>
+            <h1 id="winner-message" class="winner-message">
+
+            </h1>
+            <button id="restart" class="restart" onclick="startAgain()"></button>
+
         </div>
         <div class="icon-container">
-            <div class="item">
-                <img src="/images/rock.png">
+            <div class="item" id="rock_item">
+                <img src="/images/rock.png" id="rock" alt="Rock">
             </div>
-            <div class="item">
-                <img src="/images/paper.png">
+            <div class="item" id="paper_item">
+                <img src="/images/paper.png" id="paper" alt="Paper">
             </div>
-            <div class="item">
-                <img src="/images/scissor.png">
+            <div class="item" id="scissor_item">
+                <img src="/images/scissor.png" id="scissor" alt="Scissors">
             </div>
             </div>
         </div>
     </div>
+
+    <script src="/js/rock_paper_scissors.js"></script>
 
 </body>
 </html>
