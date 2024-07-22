@@ -25,6 +25,7 @@ body {
     background-color: #37465b; 
     cursor: pointer;
     box-shadow: 0 0 5px 10px #8fcdee;
+    border-radius: 10px;
 }
 
 .item a {
