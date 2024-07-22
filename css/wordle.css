@@ -1,0 +1,153 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #263242;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    width: 800px;
+    border-radius: 30px;
+    background-color: rgb(238, 247, 249);
+}
+.keyboard-frame{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.grid-frame{
+    padding-top: 150px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0px;
+}
+.grid-frame .row{
+    display: flex;
+    justify-content: center;
+    padding-top: 3px;
+    margin: 0px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.tile {
+    width: 62px;
+    height: 62px;
+    border: 1px solid #a6a6a6;
+    margin: 3px;
+}
+
+.keyboard{
+    padding: 50px;
+    margin: 0px;
+}
+
+.top-keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.mid-keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.bottom-keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.top-keyboard .key{
+    height: 58px;
+    width: 43px;
+    font-weight: bold;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    background-color: #d3d6da;
+    border-radius: 5px;
+}
+
+.mid-keyboard .key{
+    height: 58px;
+    width: 44px;
+    font-weight: bold;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    background-color: #d3d6da;
+    border-radius: 5px;
+}
+
+.bottom-keyboard .key{
+    height: 58px;
+    width: 44px;
+    font-weight: bold;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    background-color: #d3d6da;
+    border-radius: 5px;
+}
+
+.bottom-keyboard .enter{
+    height: 58px;
+    width: 65px;
+    font-weight: bold;
+    font-size: x-small;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    background-color: #d3d6da;
+    border-radius: 5px;
+}
+
+.bottom-keyboard .erase{
+    height: 58px;
+    width: 65px;
+    font-weight: bold;
+    font-size: x-small;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4px;
+    background-color: #d3d6da;
+    border-radius: 5px;
+}
+
+.winner-message {
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ecb7b7;
+    text-align: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
