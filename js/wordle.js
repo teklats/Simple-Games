@@ -4,10 +4,54 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentRow = 1;
     let currentTile = 0;
     let currentGuess = '';
-    const answer = 'GVELI'.toUpperCase();
+    const answers = [
+        "apple", "brave", "crane", "dance", "eagle",
+        "flame", "grape", "haste", "ivory", "joker",
+        "knock", "lemon", "mango", "noble", "olive",
+        "pearl", "quilt", "raven", "stone", "train",
+        "unity", "vivid", "wheat", "xray", "yacht",
+        "zebra", "angel", "bliss", "craft", "doubt",
+        "flint", "grasp", "house", "inbox", "jumpy",
+        "knack", "lunar", "money", "nurse", "ocean",
+        "piano", "quest", "royal", "sharp", "tiger",
+        "urban", "vocal", "whale", "xenon", "yodel",
+        "blend", "crisp", "depot", "equip", "frost",
+        "glove", "hover", "index", "jolly", "knife",
+        "latch", "mouse", "oasis", "pride", "quirk",
+        "ready", "smile", "track", "union", "wrist",
+        "zoned", "actor", "clear", "every", "focus",
+        "ghost", "happy", "jumps", "loyal", "march",
+        "never", "plant", "raise", "shape", "table",
+        "vivid", "waltz", "yield", "arise", "blend",
+        "crisp", "depot", "eager", "groom", "hatch",
+        "image", "knees", "melon", "neon", "pizza",
+        "query"
+    ];
+    let answer = getRandomWord().toUpperCase();
     let letterColors = {}; // To see which color is now each letter; 3 - green; 2 - yellow; 1 - grey; 0 - not used
 
     reserList(letterColors);
+
+    function getRandomWord() {
+        return answers[Math.floor(Math.random() * answers.length)];
+    }
+
+    function resetGame() {
+        currentRow = 1;
+        currentTile = 0;
+        currentGuess = '';
+        answer = getRandomWord().toUpperCase();
+        grid.querySelectorAll('.tile').forEach(tile => {
+            tile.textContent = '';
+            tile.style.backgroundColor = '';
+            tile.style.border = '1.3px solid #878a8c';
+        });
+        document.querySelectorAll('.key').forEach(key => {
+            key.style.backgroundColor = '';
+            key.style.color = '';
+        });
+        reserList(letterColors);
+    }
 
     function updateGrid(letter) {
         document.getElementById("winner-message").innerHTML = "";
@@ -21,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleKeyPress(key) {
-        if (key === 'ENTER' || key === 'ENTER\n') { // Some systems might add newline
+        if (key === 'ENTER' || key === 'ENTER\n') {
             submitGuess();
         } else if (key === 'BACKSPACE' || key === 'ERASE') {
             eraseLetter();
@@ -47,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentGuess === answer) {
                 updateRow(currentGuess, document.querySelectorAll(`.Row${currentRow} .tile`));
                 document.getElementById("winner-message").innerHTML = "YOU WON!";  
+                resetGame();
             } else {
                 updateRow(currentGuess, document.querySelectorAll(`.Row${currentRow} .tile`));
                 currentRow++;
@@ -54,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentGuess = '';
                 if (currentRow > 6) {
                     document.getElementById("winner-message").innerHTML = "Game Over! The answer was: " + answer; 
+                    resetGame();
                 }
             }
         } else {
@@ -80,8 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
         currTile.style.alignItems = 'center';
         currTile.style.justifyContent = 'center';
         currTile.style.fontSize = '32px';
-        currTile.style.fontFamily = 'Helvetica';
-        currTile.style.border = '1.3px solid #878a8c';
+        currTile.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
+        currTile.style.border = '1px solid #878a8c';
+        currTile.style.color = "black";
+        currTile.style.fontWeight = "bold";
         if (letter === ' ') currTile.style.border = '1px solid #a6a6a6';
     }
 
@@ -91,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currTile.style.alignItems = 'center';
         currTile.style.justifyContent = 'center';
         currTile.style.fontSize = '32px';
-        currTile.style.fontFamily = 'Helvetica';
+        currTile.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
         currTile.style.backgroundColor = color;
         currTile.style.color = 'white';
         currTile.style.fontWeight = 'bold';
@@ -157,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Helper function to get the key element by letter
+    // helper function to get the key element by letter
     function getKeyElement(letter) {
         return Array.from(document.querySelectorAll('.key')).find(key => key.textContent === letter);
     }
